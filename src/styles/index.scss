@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap");
+
+@import "_reset";
+
+// Main and reusable styles
+#root {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+html {
+	font-size: 10px;
+	scroll-behavior: smooth;
+
+	@media (max-width: 450px) {
+		font-size: 9px;
+	}
+}
+
+body {
+	font-family: "Merienda", cursive;
+	font-weight: 400;
+	line-height: 20px;
+	color: #000;
+}
+
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.products__container {
+	padding: 60px 0 30px 0;
+
+	& .error-message {
+		padding: 100px 0;
+	}
+
+	& .spinner {
+		margin: 100px auto;
+	}
+}
+
+.title {
+	font-weight: 700;
+	font-size: 4rem;
+	line-height: 58px;
+}
+
+.subtitle {
+	font-size: 2.4rem;
+	line-height: 35px;
+}
+
+.description {
+	font-size: 1.4rem;
+}
+
+.error {
+	display: inline-block;
+	font-weight: 700;
+	font-size: 2rem;
+	margin: 0 auto;
+}
+
+.back-button {
+	position: relative;
+	text-decoration: none;
+	color: #000;
+	font-weight: 700;
+	font-size: 1.4rem;
+	padding: 5px 20px;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+	transition: all 0.4s ease-in;
+	text-align: center;
+	background-color: transparent;
+	overflow: hidden;
+	&::before {
+		position: absolute;
+		content: "";
+		background-color: #000;
+		width: 100%;
+		height: 0%;
+		left: 0;
+		bottom: 0;
+		z-index: -1;
+		transition: height 0.3s ease-in-out;
+	}
+
+	&:hover {
+		color: #fff;
+
+		&::before {
+			height: 100%;
+		}
+	}
+}
+
+.loader {
+	margin: auto auto;
+}
